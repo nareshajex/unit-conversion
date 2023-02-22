@@ -1,0 +1,22 @@
+.center{
+    margin: auto;
+    width: 24%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.homeoptions{
+    display: flex;
+    box-shadow: 0 0 10 rgba(0, 0, 0, 0.13);
+    justify-content: space-between;
+}
+
+.homeUpdateOptions .updateOption a p {
+    display: flex;
+    justify-content: center;
+  }

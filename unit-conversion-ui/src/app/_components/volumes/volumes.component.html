@@ -1,0 +1,35 @@
+<div class="wrapper">
+    {{errorMessage}}
+    <form [formGroup]="volumes">
+        <div class="main-body">
+            <h1>Volume Conversion</h1>
+            <div class="mainOptionDiv">
+              <div>
+                <label htmlFor="teacher-input">Teacher's Input</label>
+                <input type="number" [(ngModel)]="teacherInput" name="teacher-input" placeholder="0" formControlName="teacherInputName"/>
+                <select formControlName="teacherUnitName">
+                  <option value="">Choose One</option>
+                  <option *ngFor="let volumeUnit of volumeUnits" [ngValue]="volumeUnit">{{volumeUnit}}</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="student-input">Student's Input</label>
+                <input type="number" [(ngModel)]="studentInput"  name="student-input" placeholder="0" formControlName="studentInputName"/>
+                <select formControlName="studentUnitName">
+                  <option value="">Choose One</option>
+                  <option *ngFor="let volumeUnit of volumeUnits" [ngValue]="volumeUnit">{{volumeUnit}}</option>
+                </select>
+              </div>
+            </div>
+            <div>
+                <button (click)="handleConversion()" [disabled] = "!volumes.valid">
+                  Convert
+                </button>
+              </div>
+            <div>
+              <div><p>Output : {{result != '' ? this.result : null}}</p></div>
+              <div>Correct Ans : {{converetedResult}}</div>
+            </div>
+          </div>
+    </form>
+</div>
